@@ -1,12 +1,12 @@
-var BASE_URL="https://my-socket.herokuapp.com/";
+var BASE_URL = "https://arcane-anchorage-42066.herokuapp.com/";
 
 const io = require("socket.io-client");
 
 // let socket = io.connect(BASE_URL);
 
 
-const socket = io("http://localhost:8080", {
-    reconnectionDelayMax: 10000,
+const socket = io(BASE_URL, {
+    // reconnectionDelayMax: 10000,
     // auth: {
     //     token: "123"
     // },
@@ -24,6 +24,7 @@ socket.on("connect", rr => {
 
 
 // console.log(socket);
+
 socket.on("welcome",data=>{
     console.log("received:",data)
 })
