@@ -7,7 +7,7 @@ const http=require("http").createServer();
 console.warn("this is a warning")
 
 const io=require("socket.io")(http);
-console.log(io);
+// console.log(io);
 
 io.on("connection",(socket)=>{
 
