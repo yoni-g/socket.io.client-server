@@ -1,19 +1,12 @@
-var BASE_URL = "https://arcane-anchorage-42066.herokuapp.com/";
+var BASE_URL = "https://mysterious-atoll-34815.herokuapp.com/";
+var TEST_URL = "http://localhost:8080"
 
 const io = require("socket.io-client");
 
 // let socket = io.connect(BASE_URL);
 
 
-const socket = io(BASE_URL, {
-    // reconnectionDelayMax: 10000,
-    // auth: {
-    //     token: "123"
-    // },
-    // query: {
-    //     "my-key": "my-value"
-    // }
-});
+const socket = io(BASE_URL);
 
 
 socket.on("connect", rr => {
@@ -25,12 +18,12 @@ socket.on("connect", rr => {
 
 // console.log(socket);
 
-socket.on("welcome",data=>{
-    console.log("received:",data)
+socket.on("welcome", data => {
+    console.log("received:", data)
 })
 
 socket.on("error", err => {
-     console.log("error", err);
+    console.log("error", err);
 })
 
 socket.on("open", rr => {
@@ -39,5 +32,5 @@ socket.on("open", rr => {
 
 socket.connect(res => {
     console.log("connect", res);
-    
+
 })
